@@ -73,7 +73,7 @@ BEGIN
 	SELECT TOP 1000000  RowIndex, x, y, angle FROM [geometry].[fncGetConvexHull](@parameterPoints) ORDER BY angle
 	-----------------------------------------------------------------------------------
 
-	IF NOT ((SELECT CHECKSUM_AGG(BINARY_CHECKSUM(*)) FROM @hullPoints) = (SELECT   CHECKSUM_AGG(BINARY_CHECKSUM(*)) FROM @assertHullPoints))
+	IF NOT ((SELECT CHECKSUM_AGG(BINARY_CHECKSUM(*)) FROM @hullPoints) = (SELECT CHECKSUM_AGG(BINARY_CHECKSUM(*)) FROM @assertHullPoints))
 	BEGIN
 		SET @Valid = 0
 	END
