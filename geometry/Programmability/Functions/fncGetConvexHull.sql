@@ -1,44 +1,18 @@
 /******************************************************************************
-**  Beschreibung: SQL implementation of the graham-scan algorithm for creating a convex hull in O(N Log(N)) time.
+**  Description: SQL implementation of the graham-scan algorithm for creating a convex hull in O(N Log(N)) time.
 **
 **
 **  Return: Sorted convex hull of a given unsorted set of 2D points.
 **
-**  Autor: T. Erni
-**  Datum: 10.01.2017
+**  Author: T. Erni
+**  Date: 10.01.2017
 **
 **
 *******************************************************************************
 **  Change History
 *******************************************************************************
-**  Datum:      Author:         Beschreibung:
+**  Date:      Author:         Description:
 **  --------    --------------  -----------------------------------------------
-**
-*******************************************************************************
-**  Debug Statements
-*******************************************************************************
-	SELECT * FROM @_points;
-	SELECT * FROM @sortedPoints;
-	SELECT * FROM @hullPoints;
-	SELECT * FROM @refPoint_1
-	SELECT * FROM @refPoint_2
-	SELECT * FROM @refPoint_3
-	SELECT @totalPoints AS SortedPointsLength
-	SELECT @pointsLeftToProcessLength AS SortedPointsLeftToProcessLength
-	SELECT @hullPointsRowCount AS HullPointsLength
-
-	SELECT [geometry].fncCheckPoints(@refPoint_1, @refPoint_2, @refPoint_3)
-
-	PRINT CAST(@failSafeCounter AS NVARCHAR(MAX)) + '---------------------------------'
-	SELECT * FROM @hullPoints;
-	SELECT 
-		(SELECT x FROM @refPoint_1) AS rf_1_x
-		, (SELECT y FROM @refPoint_1) AS rf_1_y
-		, (SELECT x FROM @refPoint_2) AS rf_2_x
-		, (SELECT y FROM @refPoint_2) AS rf_2_y
-		, (SELECT x FROM @refPoint_3) AS rf_3_x
-		, (SELECT y FROM @refPoint_3) AS rf_3_y
-	PRINT CAST(@failSafeCounter AS NVARCHAR(MAX)) + '---------------------------------'
 ******************************************************************************/
 CREATE FUNCTION [geometry].[fncGetConvexHull]
 (
