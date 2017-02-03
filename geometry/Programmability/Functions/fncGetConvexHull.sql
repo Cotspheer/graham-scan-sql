@@ -322,9 +322,7 @@ BEGIN
 					-- convex hull is generated, we are done!
 					RETURN;
 				END
-
 			BREAK;
 		END
-
 	RETURN;
 END
